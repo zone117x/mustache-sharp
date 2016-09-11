@@ -47,13 +47,13 @@ namespace Mustache
                 
                 BindingFlags flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.FlattenHierarchy;
                 
-                var properties = getMembers(type, type.GetProperties(flags).Where(p => !p.IsSpecialName));
+                var properties = getMembers(type, type.GetTypeInfo().GetProperties(flags).Where(p => !p.IsSpecialName));
                 foreach (PropertyInfo propertyInfo in properties)
                 {
                     typeCache.Add(propertyInfo.Name, i => propertyInfo.GetValue(i, null));
                 }
 
-                var fields = getMembers(type, type.GetFields(flags).Where(f => !f.IsSpecialName));
+                var fields = getMembers(type, type.GetTypeInfo().GetFields(flags).Where(f => !f.IsSpecialName));
                 foreach (FieldInfo fieldInfo in fields)
                 {
                     typeCache.Add(fieldInfo.Name, i => fieldInfo.GetValue(i));
@@ -88,7 +88,7 @@ namespace Mustache
         private static int getDistance(Type type, MemberInfo memberInfo)
         {
             int distance = 0;
-            for (; type != null && type != memberInfo.DeclaringType; type = type.BaseType)
+            for (; type != null && type != memberInfo.DeclaringType; type = type.GetTypeInfo().BaseType)
             {
                 ++distance;
             }

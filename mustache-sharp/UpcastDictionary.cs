@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 
 namespace Mustache
 {
@@ -36,15 +37,15 @@ namespace Mustache
                 visited.Add(type);
                 yield return type;
 
-                if (type.BaseType != null)
+                if (type.GetTypeInfo().BaseType != null)
                 {
-                    if (!visited.Contains(type.BaseType))
+                    if (!visited.Contains(type.GetTypeInfo().BaseType))
                     {
-                        pending.Enqueue(type.BaseType);
+                        pending.Enqueue(type.GetTypeInfo().BaseType);
                     }
                 }
 
-                foreach (Type interfaceType in type.GetInterfaces())
+                foreach (Type interfaceType in type.GetTypeInfo().GetInterfaces())
                 {
                     if (!visited.Contains(interfaceType))
                     {
@@ -66,11 +67,11 @@ namespace Mustache
 
         private static Type getValueType(Type type)
         {
-            if (!type.IsGenericType)
+            if (!type.GetTypeInfo().IsGenericType)
             {
                 return null;
             }
-            Type[] argumentTypes = type.GetGenericArguments();
+            Type[] argumentTypes = type.GetTypeInfo().GetGenericArguments();
             if (argumentTypes.Length != 2)
             {
                 return null;
@@ -82,7 +83,7 @@ namespace Mustache
             }
             Type valueType = argumentTypes[1];
             Type genericType = typeof(IDictionary<,>).MakeGenericType(typeof(string), valueType);
-            if (!genericType.IsAssignableFrom(type))
+            if (!genericType.GetTypeInfo().IsAssignableFrom(type))
             {
                 return null;
             }

@@ -61,7 +61,7 @@ namespace Mustache
                 // Do not escape text within triple curly braces
                 return;
             }
-            e.Substitute = SecurityElement.Escape(e.Substitute);
+            e.Substitute = System.Net.WebUtility.HtmlEncode(e.Substitute);
         }
     }
 }

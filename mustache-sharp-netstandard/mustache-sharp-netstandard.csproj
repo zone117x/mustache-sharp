@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3FA55D0D-839B-4675-BC80-7FDE530F40E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mustache_sharp_netstandard</RootNamespace>
+    <AssemblyName>mustache-sharp-netstandard</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\mustache-sharp\ArgumentCollection.cs">
+      <Link>ArgumentCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\CompoundGenerator.cs">
+      <Link>CompoundGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\ConditionTagDefinition.cs">
+      <Link>ConditionTagDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\ContentTagDefinition.cs">
+      <Link>ContentTagDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\Context.cs">
+      <Link>Context.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\ContextParameter.cs">
+      <Link>ContextParameter.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\EachTagDefinition.cs">
+      <Link>EachTagDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\ElifTagDefinition.cs">
+      <Link>ElifTagDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\ElseTagDefinition.cs">
+      <Link>ElseTagDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\FormatCompiler.cs">
+      <Link>FormatCompiler.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\Generator.cs">
+      <Link>Generator.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\HtmlFormatCompiler.cs">
+      <Link>HtmlFormatCompiler.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\IArgument.cs">
+      <Link>IArgument.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\IfTagDefinition.cs">
+      <Link>IfTagDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\IGenerator.cs">
+      <Link>IGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\IndexTagDefinition.cs">
+      <Link>IndexTagDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\InlineGenerator.cs">
+      <Link>InlineGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\InlineTagDefinition.cs">
+      <Link>InlineTagDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\KeyFoundEventArgs.cs">
+      <Link>KeyFoundEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\KeyGenerator.cs">
+      <Link>KeyGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\KeyNotFoundEventArgs.cs">
+      <Link>KeyNotFoundEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\MasterTagDefinition.cs">
+      <Link>MasterTagDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\NestedContext.cs">
+      <Link>NestedContext.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\NewlineTagDefinition.cs">
+      <Link>NewlineTagDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\NumberArgument.cs">
+      <Link>NumberArgument.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\PlaceholderArgument.cs">
+      <Link>PlaceholderArgument.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\PlaceholderFoundEventArgs.cs">
+      <Link>PlaceholderFoundEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\PropertyDictionary.cs">
+      <Link>PropertyDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\RegexHelper.cs">
+      <Link>RegexHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\Scope.cs">
+      <Link>Scope.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\SetTagDefinition.cs">
+      <Link>SetTagDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\StaticGenerator.cs">
+      <Link>StaticGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\StringArgument.cs">
+      <Link>StringArgument.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\Strings.cs">
+      <Link>Strings.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\Substitution.cs">
+      <Link>Substitution.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\TagDefinition.cs">
+      <Link>TagDefinition.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\TagFormattedEventArgs.cs">
+      <Link>TagFormattedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\TagParameter.cs">
+      <Link>TagParameter.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\UpcastDictionary.cs">
+      <Link>UpcastDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\ValueRequestEventArgs.cs">
+      <Link>ValueRequestEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\VariableArgument.cs">
+      <Link>VariableArgument.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\VariableFoundEventArgs.cs">
+      <Link>VariableFoundEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\mustache-sharp\WithTagDefinition.cs">
+      <Link>WithTagDefinition.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
